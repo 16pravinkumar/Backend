@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full h-full bg-zinc-900 p-10">
+      <a href="/read" class="text-blue-600"> See all users &rarr; </a>
+
+      <h1 class="text-white text-4xl my-5">
+        Hey, <span class="text-green-400 uppercase"><%= user.name %> </span> now
+        you can update your data
+      </h1>
+      <form action="/updateData/<%= user._id %>" method="post" class="flex gap-5 text-white">
+        <input
+          class="px-5 py-3 bg-transparent border-2 border-zinc-600 rounded-lg"
+          type="text"
+          name="name"
+          value="<%= user.name %>"
+        />
+        <input
+          class="px-5 py-3 bg-transparent border-2 border-zinc-600 rounded-lg"
+          type="email"
+          name="email"
+          value="<%= user.email %>"
+        />
+        <input
+          class="px-5 py-3 bg-transparent border-2 border-zinc-600 rounded-lg"
+          type="text"
+          name="imgUrl"
+          value="<%= user.imgUrl %>"
+        />
+        <br />
+        <input
+          class="px-5 py-3 bg-yellow-600 rounded-lg cursor-pointer"
+          type="submit"
+          value="Update"
+        />
+      </form>
+    </div>
+
+    <script src="/Js/app.js"></script>
+  </body>
+</html>
